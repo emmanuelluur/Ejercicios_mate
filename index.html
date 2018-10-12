@@ -11,11 +11,22 @@
     <title>Operaciones</title>
     <link rel="stylesheet" href="librerias/materialize/css/materialize.css">
     <script src="librerias/materialize/js/materialize.js"></script>
+    <link rel="stylesheet" href="librerias/fontawesome/fontawesome-free-5.4.1-web/css/all.css">
 
     <style>
-        .hamburguer {
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+        .hamburguer, .icono{
             font-size: 2em;
         }
+        
     </style>
 </head>
 
@@ -34,7 +45,7 @@
         <li><a href="https://eluur.wordpress.com" target="_blank">Emmanuel Lucio Urbina</a></li>
     </ul>
     <!--Fin barra-->
-    <div class="container">
+    <main  class="container">
         <div class="row">
             <div class="col s12 m4 l4">
                 <h3>Opciones</h3>
@@ -44,10 +55,12 @@
                         <select id="op">
                             <option value="1" selected>Suma</option>
                             <option value="2">Resta</option>
+                            <option value="3">Multiplica</option>
+                            <option value="4">Divide</option>
                         </select>
                         <label>Operación</label>
                     </div>
-                    
+
                     <div class="input-field col s12 m12 l12">
                         <select id="tipo">
                             <option value="1" selected>Entero</option>
@@ -71,21 +84,46 @@
                 </form>
             </div>
             <div class="col s12 m2 l2">&nbsp;</div>
-            <div class="col s2 m6 l6">
+            <div class="col s12 m6 l6">
                 <h3>Ejercicio</h3>
                 <p>
                     <h3> <span id="resultados"></span></h3>
                 </p>
                 <p>
-                    <span id = "in_user"></span>
-                    <span id = "hidde_resp"></span>
+                    <span id="in_user"></span>
+                    <span id="hidde_resp"></span>
+                </p>
+                <p>
+                    <span id="textResp"></span>
                 </p>
                 <p>
                     <span id="btn_hidde"></span>
                 </p>
             </div>
         </div>
-    </div>
+    </main >
+    <footer class="page-footer blue-grey lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Ejercicios Matemáticas Básicas</h5>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h6 class="white-text">Código y proyecto descargables desde</h6>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/emmanuelluur/Ejercicios_mate"><i class="fab fa-github-square icono"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 <a href="https://eluur.wordpress.com" target="_blank">Emmanuel Lucio Urbina</a>
+                <a class="grey-text text-lighten-4 right" href="https://twitter.com/emmanuelluur">Sigume en <i class="fab fa-twitter-square icono"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <!--JS-->
     <script src="js/main.js"></script>
     <script>
@@ -93,7 +131,7 @@
             CargaNav();
             CargaSelect();
             Generar();
-            consulta();
+
         });
     </script>
 </body>

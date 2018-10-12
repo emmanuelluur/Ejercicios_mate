@@ -20,11 +20,19 @@ class Funciones
         switch ($operacion) {
             case '1':
                 # suma
-                return array("primero" => $this->AleatorioEntero($min,$max), "segundo" => $this->AleatorioEntero($min,$max), "operador" => "suma");
+                return array("primero" => $this->AleatorioEntero($min, $max), "segundo" => $this->AleatorioEntero($min, $max), "operador" => "suma");
                 break;
             case '2':
                 # suma
-                return array("primero" => $this->AleatorioEntero($min,$max), "segundo" => $this->AleatorioEntero($min,$max), "operador" => "resta");
+                return array("primero" => $this->AleatorioEntero($min, $max), "segundo" => $this->AleatorioEntero($min, $max), "operador" => "resta");
+                break;
+            case '3':
+                # suma
+                return array("primero" => $this->AleatorioEntero($min, $max), "segundo" => $this->AleatorioEntero($min, $max), "operador" => "multiplica");
+                break;
+            case '4':
+                # suma
+                return array("primero" => $this->AleatorioEntero($min, $max), "segundo" => $this->AleatorioEntero($min, $max), "operador" => "divide");
                 break;
             default:
                 # code...
