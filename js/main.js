@@ -70,7 +70,7 @@ function Generar() {
                         operacion =
                             "<div class = 'row'> <div class = 'col s12'> <div class = 'card-panel teal white-text'> <p>" + response.primero + "    /   " + response.segundo + " = ?</p></div> </div> </div>";
 
-                        res = response.primero / response.segundo;
+                        res = response.segundo / response.primero;
                         document.querySelector("#resultados").innerHTML = operacion;
                         document.querySelector("#hidde_resp").innerHTML = "<input type = 'hidden' id = 'sys_res' value = " + res.toFixed(2) + ">";
                         document.querySelector("#in_user").innerHTML = "<div class='input-field col s12'><input  id='user_in' type='number' class='validate'><label for='user_in'>Respuesta (2 decimales)</label></div>";
