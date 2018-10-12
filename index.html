@@ -41,7 +41,7 @@
                 <form>
 
                     <div class="input-field col s12 m12 l12">
-                        <select id = "op">
+                        <select id="op">
                             <option value="0" disabled selected>Elije Operación</option>
                             <option value="1">Suma</option>
                             <option value="2">Resta</option>
@@ -51,7 +51,7 @@
 
 
                     <div class="input-field col s12 m12 l12">
-                        <select id = "tipo">
+                        <select id="tipo">
                             <option value="1">Entero</option>
                         </select>
                         <label>Tipo de número</label>
@@ -75,14 +75,20 @@
             <div class="col s2 m6 l6">
                 <h3>Ejercicio</h3>
                 <p>
-                    <span id="resultados"></span>
+                    <h3> <span id="resultados"></span></h3>
                 </p>
             </div>
         </div>
     </div>
+    <!--JS-->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            CargaNav();
+            CargaSelect();
+            Generar();
+        });
+    </script>
 </body>
-<script src="js/main.js"></script>
-<script>
-    Generar();
-</script>
+
 </html>
