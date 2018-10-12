@@ -36,7 +36,7 @@
     <!--Fin barra-->
     <div class="container">
         <div class="row">
-            <div class="col s12 m6 l6">
+            <div class="col s12 m4 l4">
                 <h3>Opciones</h3>
                 <form>
 
@@ -47,8 +47,7 @@
                         </select>
                         <label>Operación</label>
                     </div>
-
-
+                    
                     <div class="input-field col s12 m12 l12">
                         <select id="tipo">
                             <option value="1" selected>Entero</option>
@@ -71,10 +70,18 @@
                     </p>
                 </form>
             </div>
+            <div class="col s12 m2 l2">&nbsp;</div>
             <div class="col s2 m6 l6">
                 <h3>Ejercicio</h3>
                 <p>
                     <h3> <span id="resultados"></span></h3>
+                </p>
+                <p>
+                    <span id = "in_user"></span>
+                    <span id = "hidde_resp"></span>
+                </p>
+                <p>
+                    <span id="btn_hidde"></span>
                 </p>
             </div>
         </div>
@@ -86,6 +93,7 @@
             CargaNav();
             CargaSelect();
             Generar();
+            consulta();
         });
     </script>
 </body>

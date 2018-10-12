@@ -30,19 +30,30 @@ function Generar() {
         request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  //  Cabeceras 
         request.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
+                
                 // si se encuentra el archivo y esta todo OK mostramos resultado
                 response = JSON.parse(this.responseText);
                 switch (response.operador) {
                     case "suma":
-                        operacion = response.primero + "    +   " + response.segundo;
+                        operacion = 
+                        "<div class = 'row'> <div class = 'col s12 m6'> <div class = 'card-panel teal white-text'> <p>"+ response.primero + "    +   " + response.segundo +" = ?</p></div> </div> </div>";
+                        
                         res  = response.primero + response.segundo;
                         document.querySelector("#resultados").innerHTML=operacion;
-
+                        document.querySelector("#hidde_resp").innerHTML="<input type = 'hidden' id = 'sys_res' value = "+res+">";
+                        document.querySelector("#in_user").innerHTML = "<div class='input-field col s12 m12 l12'><input value='0' id='user_in' type='number' class='validate'></div>";
+                        document.querySelector("#btn_hidde").innerHTML="<button type = 'button'  class='btn waves-effect waves-light ' id = 'cons'>Verifica</button >";
+                        consulta();
                         break;
                     case "resta":
-                        operacion = response.primero + "    -   " + response.segundo;
+                    operacion = 
+                    "<div class = 'row'> <div class = 'col s12 m6'> <div class = 'card-panel teal white-text'> <p>"+ response.primero + "    -   " + response.segundo +" = ?</p></div> </div> </div>";
                         res  = response.primero - response.segundo;
                         document.querySelector("#resultados").innerHTML=operacion;
+                        document.querySelector("#hidde_resp").innerHTML="<input type = 'hidden' id = 'sys_res' value = "+res+">";
+                        document.querySelector("#in_user").innerHTML = "<div class='input-field col s12 m12 l12'><input value='0' id='user_in' type='number' class='validate'></div>";
+                        document.querySelector("#btn_hidde").innerHTML="<button type = 'button'  class='btn waves-effect waves-light ' id = 'cons'>Verifica</button >";
+                        consulta();
                         break;
                 }
             }
@@ -56,3 +67,16 @@ function Generar() {
     });
 }
 
+function consulta(){
+    btn_consulta = document.querySelector("#cons");
+    btn_consulta.addEventListener("click",function(){
+        let res = document.querySelector("#sys_res");
+        let user = document.querySelector("#user_in");
+        if (user.value == res.value){
+            alert("Correcto");
+        }
+        else {
+            alert("Incorrecto");
+        }
+    });
+}
